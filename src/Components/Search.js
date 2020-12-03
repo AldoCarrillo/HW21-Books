@@ -183,8 +183,6 @@ class Search extends Component {
 										</Container>
 									))}
 								</MDBTable>
-
-								<Row />
 							</Container>
 						</Paper>
 					</Grid>
