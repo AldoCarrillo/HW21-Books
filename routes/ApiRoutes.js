@@ -34,9 +34,6 @@ router.get('/books', (req, res) => {
 });
 
 router.delete('/bookid', (req, res) => {
-	console.log(req.query.id);
-	//BookModel.remove({ id: req.query.id });
-
 	BookModel.remove(
 		{
 			id: req.query.id

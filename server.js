@@ -7,12 +7,11 @@ const cors = require('cors');
 
 dotenv.config();
 
-//mongoose.connect(process.env.DATABASE_ACCESS, () => console.log('DataBase Connected'));
-
 mongoose
-	.connect('mongodb://localhost/GoogleBooks', {
-		userCreateIndex: true,
+	.connect(process.env.MONGODB_URI || 'mongodb://localhost/GoogleBooks', {
 		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
 		useFindAndModify: false
 	})
 	.then((db) => console.log('DB is connected'));
