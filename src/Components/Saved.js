@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import axios from 'axios';
 
@@ -136,7 +136,7 @@ class Saved extends Component {
 													<td>
 														<h4>Image: </h4>
 
-														<img src={book.picture} />
+														<img alt="imgbook" src={book.picture} />
 													</td>
 												</tr>
 												<tr>

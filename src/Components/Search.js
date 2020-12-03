@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Navbar from './Navbar';
 import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import axios from 'axios';
@@ -67,20 +67,6 @@ class Search extends Component {
 		const data = await response.json();
 
 		this.setState({ books: data.items });
-
-		// const book = {
-		// 	id: '000',
-		// 	volumeInfo: {
-		// 		title: 'Not Found',
-		// 		authors: [ 'Not Found' ],
-		// 		imageLinks: 'Not Found',
-		// 		infoLink: 'Not Found'
-		// 	}
-		// };
-
-		// const arraybooks = [];
-		// arraybooks.push(book);
-		// this.setState({ books: arraybooks });
 	}
 
 	onAdd(event) {
@@ -150,7 +136,7 @@ class Search extends Component {
 										</tr>
 									</MDBTableHead>
 									{this.state.books.map((book, index) => (
-										<Container className={classes.result}>
+										<Container className={classes.result} key={book.id}>
 											<MDBTableBody>
 												<tr>
 													<td>
