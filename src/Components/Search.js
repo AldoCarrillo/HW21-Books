@@ -68,7 +68,6 @@ class Search extends Component {
 
 		if (typeof data.items === 'undefined') {
 			this.setState({ books: [] });
-			alert('Book not Founded');
 		} else this.setState({ books: data.items });
 	}
 
