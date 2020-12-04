@@ -11,8 +11,7 @@ mongoose
 	.connect(process.env.MONGODB_URI || 'mongodb://localhost/GoogleBooks', {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		useCreateIndex: true,
-		useFindAndModify: false
+		useCreateIndex: true
 	})
 	.then((db) => console.log('DB is connected'));
 
