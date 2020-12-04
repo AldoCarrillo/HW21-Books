@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "main": "server.js",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.1",
