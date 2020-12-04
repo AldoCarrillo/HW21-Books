@@ -54,7 +54,7 @@ class Saved extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:4000/app/books').then((response) => {
+		axios.get('/app/books').then((response) => {
 			this.setState({
 				books: response.data
 			});
@@ -67,7 +67,7 @@ class Saved extends Component {
 			var body = document.getElementsByTagName('body')[0];
 			body.appendChild(tag);
 		};
-		loadScript('http://localhost:3000/Saved');
+		loadScript('/Saved');
 	}
 
 	onDelete(event) {
@@ -76,11 +76,9 @@ class Saved extends Component {
 		const text = event.target.textContent;
 		const index = text.split(' ');
 
-		axios
-			.delete('http://localhost:4000/app/bookid', { params: { id: this.state.books[index[0]].id } })
-			.then((response) => {
-				console.log(response.data);
-			});
+		axios.delete('/app/bookid', { params: { id: this.state.books[index[0]].id } }).then((response) => {
+			console.log(response.data);
+		});
 
 		this.componentDidMount();
 	}

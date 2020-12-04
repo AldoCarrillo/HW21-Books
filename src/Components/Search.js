@@ -66,7 +66,9 @@ class Search extends Component {
 		const response = await fetch(url);
 		const data = await response.json();
 
-		this.setState({ books: data.items });
+		if (typeof data.items === 'undefined') {
+			this.setState({ books: [] });
+		} else this.setState({ books: data.items });
 	}
 
 	onAdd(event) {
@@ -86,9 +88,7 @@ class Search extends Component {
 			link: this.state.books[index[0]].volumeInfo.infoLink
 		};
 
-		axios
-			.post('http://localhost:4000/app/book', book)
-			.then((response) => console.log('Book Saved: ', response.data));
+		axios.post('/app/book', book).then((response) => console.log('Book Saved: ', response.data));
 
 		event.target.textContent = 'added';
 	}
