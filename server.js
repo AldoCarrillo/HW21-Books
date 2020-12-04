@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const routesUrls = require('./routes/ApiRoutes');
 const cors = require('cors');
-
+const PORT = process.env.PORT || 4000;
 dotenv.config();
 
 mongoose
@@ -20,4 +20,10 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routesUrls);
 
-app.listen(4000, () => console.log('Server is Running'));
+// app.get("*", (req, res) => {
+// 	res.sendFile(path.join(__dirname, "./client/index.html"));
+//   });
+
+app.listen(PORT, () => {
+	console.log(`App running on port ${PORT}!`);
+});
