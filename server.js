@@ -6,9 +6,9 @@ const routesUrls = require('./routes/ApiRoutes');
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 dotenv.config();
-
+//|| 'mongodb://localhost/GoogleBooks'
 mongoose
-	.connect(process.env.MONGODB_URI || 'mongodb://localhost/GoogleBooks', {
+	.connect(process.env.MONGODB_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true
